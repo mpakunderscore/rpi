@@ -1,8 +1,20 @@
-const fs = require('fs');
-fs.writeFile("/tmp/test", "Hey there!", function(err) {
-    if(err) {
-        return console.log(err);
-    }
+function initData() {
+    document.getElementById('ssid').value = localStorage.getItem('ssid');
+    document.getElementById('password').value = localStorage.getItem('password');
+}
 
-    console.log("The file was saved!");
-});
+initData();
+
+function writeCard() {
+
+    let ssid = document.getElementById('ssid').value;
+    let password = document.getElementById('password').value;
+
+    // console.log(ssid)
+    // console.log(password)
+
+    localStorage.setItem('ssid', ssid);
+    localStorage.setItem('password', password);
+
+    writeConfig(ssid, password);
+}

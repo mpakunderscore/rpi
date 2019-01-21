@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>RPI</title>
-</head>
-<body>
 
-    <div>RPI</div>
+    <head>
+        <meta charset="UTF-8">
+        <title>RPI</title>
 
-    <script>
-        // You can also require other files to run in this process
-        // require('./renderer.js')
-    </script>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
 
-    <script src="js/index.js"></script>
+        <link rel="stylesheet" type="text/css" href="stylesheet/index.css">
 
-</body>
+    </head>
+
+    <body>
+
+        <div id="menu">
+            <div>Wi-Fi</div>
+            <input id="ssid" type="text" placeholder="SSID"/>
+            <input id="password" type="text" placeholder="Password"/>
+            <div>Card</div>
+            <input id="card" type="text" placeholder="/Volumes/boot/wpa_supplicant.conf"/>
+            <div>IP</div>
+            <input id="ip" type="text" placeholder="cloud.local"/>
+
+            <div class="button" onclick="writeCard()">Write data on card</div>
+        </div>
+
+        <script>
+            // You can also require other files to run in this process
+            // require('./renderer.js')
+        </script>
+
+        <script src="js/index.js"></script>
+        <script src="js/card.js"></script>
+
+    </body>
+
 </html>
